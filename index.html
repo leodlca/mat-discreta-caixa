@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="assets/nav.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        &nbsp;Caixa AT&T
+      </a>
+    </nav>
+
+    <div class="container">
+
+    <br>
+
+      <div class="alert alert-danger hidden" id="billsError" role="alert">
+        <strong>Oops!</strong> Você deve selecionar 2 tipos de notas diferentes para prosseguir.
+      </div>
+
+      <div class="alert alert-danger hidden" id="combinationError" role="alert">
+        <strong>Oops!</strong> Essa combinação de valor e notas não possui um resultado válido.
+      </div>
+
+      <label for="value">Insira o valor a ser sacado:</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text text-uppercase">R$</span>
+        </div>
+        <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)"
+        id="value" value="0">
+        <div class="input-group-append">
+          <span class="input-group-text">,00</span>
+        </div>
+      </div>
+
+      <label>Selecione 2 tipos de nota:</label>
+      <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary" id="label-2">
+          <input type="checkbox" id="2" name="2" autocomplete="off" value="2"> R$ 2,00
+        </label>
+
+        <label class="btn btn-secondary" id="label-5">
+          <input type="checkbox" id="5" name="5" autocomplete="off"> R$ 5,00
+        </label>
+
+        <label class="btn btn-secondary" id="label-10">
+          <input type="checkbox" id="10" name="10" autocomplete="off"> R$ 10,00
+        </label>
+
+        <label class="btn btn-secondary" id="label-20">
+          <input type="checkbox" id="20" name="20" autocomplete="off"> R$ 20,00
+        </label>
+
+        <label class="btn btn-secondary" id="label-50">
+          <input type="checkbox" id="50" name="50" autocomplete="off"> R$ 50,00
+        </label>
+
+        <label class="btn btn-secondary" id="label-100">
+          <input type="checkbox" id="100" name="100" autocomplete="off"> R$ 100,00
+        </label>
+      </div>
+
+      <br>
+
+      <div id="prosseguir-div" class="row">
+        <button type="button" class="btn btn-secondary mx-auto" id="prosseguir-btn">Calcular</button>
+      </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalResposta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalRespostaH5"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="modalRespostaBody">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

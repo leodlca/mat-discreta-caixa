@@ -1,0 +1,26 @@
+label.btn-secondary {
+  background-color: rgb(233, 236, 239) !important;
+  border-color: rgb(233, 236, 239) !important;
+  color: #495057 !important;
+}
+
+button.btn-secondary, label.btn-secondary.active {
+  background-color:#343a40 !important;
+  border-color: #343a40 !important;
+  color: #fff !important;
+}
+
+label.btn-secondary:hover {
+  background-color: #d3d9df !important;
+  border-color: #d3d9df !important;
+}
+
+button.btn-secondary:hover,
+label.btn-secondary.active:hover {
+  background-color: #505962 !important;
+  border-color: #505962 !important;
+}
+
+.hidden {
+  display: None;
+}
